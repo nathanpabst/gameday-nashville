@@ -1,0 +1,14 @@
+{
+  "game1" : {
+    "date": "9/9/18",
+    "time": "3:05",
+    "teamOne": "Kansas City Chiefs",
+    "teamTwo": "San Diego Chargers"
+  },
+  "game2" : {
+    "date": "9/9/18",
+    "time": "3:05 PM",
+    "teamOne": "San Diego Chargers",
+    "teamTwo": "Kansas City Chiefs"
+  }
+}
