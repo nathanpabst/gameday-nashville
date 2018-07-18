@@ -4,7 +4,7 @@ import constants from '../constants';
 const getAllEvents = () => {
   return new Promise((resolve, reject) => {
     axios
-      .get(`${constants.firebaseConfig.databaseURL}/events.json`)
+      .get(`${constants.firebaseConfig.databaseURL}/Events.json`)
       .then((results) => {
         const events = [];
         if (results.data !== null) {
