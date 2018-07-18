@@ -4,13 +4,14 @@ import firebase from 'firebase';
 
 import './App.css';
 
-import Home from '../Components/Home/Home';
+// import Home from '../Components/Home/Home';
 import Navbar from '../Components/Navbar/Navbar';
 import MyEvents from '../Components/MyEvents/MyEvents';
 import CreateEvent from '../Components/CreateEvent/CreateEvent';
 import Login from '../Components/Login/Login';
 import Register from '../Components/Register/Register';
 import fbConnection from '../firebaseRequests/connection';
+import EventListing from '../Components/EventListing/EventListing';
 fbConnection();
 
 const PrivateRoute = ({ component: Component, authed, ...rest}) => {
@@ -82,7 +83,7 @@ class App extends React.Component {
             <div className="container">
               <div className="row">
                 <Switch>
-                  <Route path="/" exact component={Home}/>
+                  <Route path="/" exact component={EventListing}/>
                   <PrivateRoute
                     path="/myEvents"
                     authed={this.state.authed}
@@ -102,6 +103,11 @@ class App extends React.Component {
                     path="/createEvent"
                     authed={this.state.authed}
                     component={CreateEvent}
+                  />
+                  <PrivateRoute
+                    path="/eventListing"
+                    authed={this.state.authed}
+                    component={EventListing}
                   />
                 </Switch>
               </div>
