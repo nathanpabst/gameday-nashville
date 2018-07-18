@@ -3,7 +3,10 @@
     "uid": "GraGCGOSbNbcMznSFBAjEUSgjAN2",
     "date": "9/9/18",
     "location": "Double Dogs",
-    "address": "1234 blah blah Nashville, TN 37211"
+    "city": "Nashville",
+    "state": "TN",
+    "zip": "37211",
+    "address": "1234 blah blah",
     "details": "I'll see you there or I will see you not there.",
     "time": "3:05 PM",
     "teamOne": "Kansas City Chiefs",

@@ -24,17 +24,17 @@ class Navbar extends React.Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <Link to="/" className="navbar-brand">Fish Store</Link>
+              <Link to="/" className="navbar-brand">Gameday Nashville</Link>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               {
                 authed ? (
                   <ul className="nav navbar-nav navbar-right">
                     <li>
-                      <Link to="/inventory" className="navbar-brand">Inventory</Link>
+                      <Link to="/createEvent" className="navbar-brand">Create Event</Link>
                     </li>
                     <li>
-                      <Link to="/orders" className="navbar-brand">Orders</Link>
+                      <Link to="/myEvents" className="navbar-brand">My Events</Link>
                     </li>
                     <li className="navbar-form">
                       <button

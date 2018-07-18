@@ -4,7 +4,12 @@ import firebase from 'firebase';
 
 import './App.css';
 
-import Navbar from '../components/Navbar/Navbar';
+import Home from '../Components/Home/Home';
+import Navbar from '../Components/Navbar/Navbar';
+import MyEvents from '../Components/MyEvents/MyEvents';
+import CreateEvent from '../Components/CreateEvent/CreateEvent';
+import Login from '../Components/Login/Login';
+import Register from '../Components/Register/Register';
 import fbConnection from '../firebaseRequests/connection';
 fbConnection();
 
@@ -34,7 +39,7 @@ const PublicRoute = ({ component: Component, authed, ...rest}) => {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: '/orders', state: {from: props.location}}}
+            to={{ pathname: '/myEvents', state: {from: props.location}}}
           />
         )
       }
@@ -93,21 +98,10 @@ class App extends React.Component {
                     authed={this.state.authed}
                     component={Login}
                   />
-
                   <PrivateRoute
-                    path="/orders"
+                    path="/createEvent"
                     authed={this.state.authed}
-                    component={OrderSpa}
-                  />
-                  <PrivateRoute
-                    path="/order/:id"
-                    authed={this.state.authed}
-                    component={SingleOrder}
-                  />
-                  <PrivateRoute
-                    path="/new"
-                    authed={this.state.authed}
-                    component={New}
+                    component={CreateEvent}
                   />
                 </Switch>
               </div>
