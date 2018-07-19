@@ -31,7 +31,7 @@ class Navbar extends React.Component {
                 authed ? (
                   <ul className="nav navbar-nav navbar-right">
                     <li>
-                      <Link to="/createEvent" className="navbar-brand">Create Event</Link>
+                      <Link to="/EventForm" className="navbar-brand">Create Event</Link>
                     </li>
                     <li>
                       <Link to="/myEvents" className="navbar-brand">My Events</Link>
