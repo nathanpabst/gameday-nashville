@@ -8,12 +8,14 @@ class Games extends React.Component {
     state = {
       games: [],
       event: {},
-      toggleShowEventForm: this.props.toggleShowEventForm,
+      // toggleShowEventForm: this.props.toggleShowEventForm,
     };
 
   selectedEvent = (game) => {
+    const {toggleShowEventForm, updateGameDeets} = this.props;
     this.setState({ event: { ...game } });
-    this.state.toggleShowEventForm();
+    updateGameDeets(game);
+    toggleShowEventForm();
   }
 
   componentDidMount () {

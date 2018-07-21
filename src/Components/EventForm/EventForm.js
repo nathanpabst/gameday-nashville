@@ -15,7 +15,8 @@ const defaultEvent = {
 
 class EventForm extends React.Component {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
+    onFormSubmit: PropTypes.func.isRequired,
+    // selectedGameDeets: PropTypes.object.isRequired,
   }
 
   state = {
@@ -59,21 +60,17 @@ class EventForm extends React.Component {
   }
 
   formSubmit = (e) => {
-    const {onSubmit} = this.props;
+    const {onFormSubmit} = this.props;
     const {newEvent} = this.state;
     e.preventDefault();
-    if (
-      newEvent.location &&
-      newEvent.address &&
-      newEvent.city &&
-      newEvent.state &&
-      newEvent.zip &&
-      newEvent.description) {
-      onSubmit(this.state.newEvent);
-      this.setState({newEvent: defaultEvent});
-    } else {
-      alert('dear god why???');
-    }
+    newEvent.location &&
+    newEvent.address &&
+    newEvent.city &&
+    newEvent.state &&
+    newEvent.zip &&
+    newEvent.description
+      ? onFormSubmit && this.setState({newEvent: defaultEvent})
+      : alert('dear god why???');
   }
 
   render () {
