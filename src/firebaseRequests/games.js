@@ -1,19 +1,19 @@
 import axios from 'axios';
 import constants from '../constants';
 
-const getSchedule = () => {
+const getAllGames = () => {
   return new Promise((resolve, reject) => {
     axios
-      .get(`${constants.firebaseConfig.databaseURL}/Schedules.json`)
+      .get(`${constants.firebaseConfig.databaseURL}/Games.json`)
       .then((results) => {
-        const schedule = [];
+        const games = [];
         if (results.data !== null) {
           Object.keys(results.data).forEach((key) => {
             results.data[key].id = key;
-            schedule.push(results.data[key]);
+            games.push(results.data[key]);
           });
         }
-        resolve(schedule);
+        resolve(games);
       })
       .catch((error) => {
         reject(error);
@@ -21,4 +21,4 @@ const getSchedule = () => {
   });
 };
 
-export default getSchedule;
+export default getAllGames;

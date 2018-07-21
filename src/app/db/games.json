@@ -1,0 +1,72 @@
+{
+	"game1": {
+    "homeTeam": "Los Angeles",
+    "awayTeam": "Kansas City",
+    "dateTime": "Sun, Sep 9 @ 3:05 PM",
+    "weekNum": "1",
+    "id": "1"
+  },
+  "game2": {
+    "homeTeam": "Kansas City",
+    "awayTeam": "Los Angeles",
+    "dateTime": "Sun, Sep 9 @ 3:05 PM",
+    "weekNum": "1",
+    "id": "2"
+},
+  "game3": {
+    "homeTeam": "Pittsburgh",
+    "awayTeam": "Kansas City",
+    "dateTime": "Sun, Sep 16 @ 12:00 PM",
+    "weekNum": "2",
+    "id": "3"
+  },
+  "game4": {
+    "homeTeam": "Kansas City",
+    "awayTeam": "Pittsburgh",
+    "dateTime": "Sun, Sep 16 @ 12:00 PM",
+    "weekNum": "2",
+    "id": "4"
+  },
+  "game5": {
+    "homeTeam": "Kansas City",
+    "awayTeam": "San Francisco",
+    "dateTime": "Sun, Sep 23 @ 12:00 PM",
+    "weekNum": "3",
+    "id": "5"
+  },
+  "game6": {
+    "homeTeam": "San Francisco",
+    "awayTeam": "Kansas City",
+    "dateTime": "Sun, Sep 23 @ 12:00 PM",
+    "weekNum": "3",
+    "id": "6"
+  },
+  "game7": {
+    "homeTeam": "Denver",
+    "awayTeam": "Kansas City",
+    "dateTime": "Mon, Oct 1 @ 8:00 PM",
+    "weekNum": "4",
+    "id": "7"
+  },
+  "game8": {
+    "homeTeam": "Kansas City",
+    "awayTeam": "Denver",
+    "dateTime": "Mon, Oct 1 @ 8:00 PM",
+    "weekNum": "4",
+    "id": "8"
+  },
+  "game9": {
+    "homeTeam": "Kansas City",
+    "awayTeam": "Jacksonville",
+    "dateTime": "Sun, Oct 7 @ 12:00 PM",
+    "weekNum": "5",
+    "id": "9"
+  },
+  "game10": {
+    "homeTeam": "Jacksonville",
+    "awayTeam": "Kansas City",
+    "dateTime": "Sun, Oct 7 @ 12:00 PM",
+    "weekNum": "5",
+    "id": "10"
+  }
+}

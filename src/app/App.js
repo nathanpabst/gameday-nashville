@@ -13,7 +13,7 @@ import Register from '../Components/Register/Register';
 import fbConnection from '../firebaseRequests/connection';
 import EventListing from '../Components/EventListing/EventListing';
 import EventForm from '../Components/EventForm/EventForm';
-import Schedule from '../Components/Schedule/Schedule';
+import Games from '../Components/Games/Games';
 fbConnection();
 
 const PrivateRoute = ({ component: Component, authed, ...rest}) => {
@@ -117,9 +117,9 @@ class App extends React.Component {
                     component={EventForm}
                   />
                   <PrivateRoute
-                    path="/schedule"
+                    path="/games"
                     authed={this.state.authed}
-                    component={Schedule}
+                    component={Games}
                   />
                 </Switch>
               </div>
