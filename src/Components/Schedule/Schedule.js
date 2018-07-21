@@ -6,21 +6,21 @@ import getSchedule from '../../firebaseRequests/schedule';
 
 class Schedule extends React.Component {
   state = {
-    schedule: [],
+    schedules: [],
   }
   componentDidMount () {
     getSchedule()
-      .then((schedule) => {
-        this.setState({schedule});
+      .then((schedules) => {
+        this.setState({schedules});
       })
       .catch((error) => {
-        this.setState({schedule: []});
+        console.error('error with schedule GET request', error);
       });
   }
   render () {
-    const {schedule} = this.state;
-    const scheduleComponents = schedule.map((schedule) => (
-      <div key={schedule.id}className="panel panel-defaul">
+    const {schedules} = this.state;
+    const scheduleComponents = schedules.map((schedule) => (
+      <div key={schedule.id}className="panel panel-default">
         <div className="panel-heading Schedule">{schedule.name} 2018 Schedule</div>
         <table className="table table-bordered table-striped">
           <tbody>
