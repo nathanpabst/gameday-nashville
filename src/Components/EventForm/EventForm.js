@@ -5,10 +5,6 @@ import PropTypes from 'prop-types';
 import './EventForm.css';
 
 const defaultEvent = {
-  team1: '',
-  team2: '',
-  date: 0,
-  time: 0,
   location: '',
   address: '',
   city: '',
@@ -19,11 +15,13 @@ const defaultEvent = {
 
 class EventForm extends React.Component {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
+    onFormSubmit: PropTypes.func.isRequired,
+    // selectedGameDeets: PropTypes.object.isRequired,
   }
 
   state = {
     newEvent: defaultEvent,
+    showEventForm: this.props.showEventForm,
   }
 
   formFieldStringState = (name, e) => {
@@ -36,22 +34,6 @@ class EventForm extends React.Component {
     const tempEvent = {...this.state.newEvent};
     tempEvent[name] = e.target.value * 1;
     this.setState({newEvent: tempEvent});
-  }
-
-  team1Change = (e) => {
-    this.formFieldStringState('team1', e);
-  }
-
-  team2Change = (e) => {
-    this.formFieldStringState('team2', e);
-  }
-
-  dateChange = (e) => {
-    this.formFieldNumberState('date', e);
-  }
-
-  timeChange = (e) => {
-    this.formFieldNumberState('time', e);
   }
 
   locationChange = (e) => {
@@ -78,70 +60,30 @@ class EventForm extends React.Component {
   }
 
   formSubmit = (e) => {
-    const {onSubmit} = this.props;
+    const {onFormSubmit} = this.props;
     const {newEvent} = this.state;
     e.preventDefault();
-    if (
-      newEvent.team1 &&
-      newEvent.team2 &&
-      newEvent.date &&
-      newEvent.time &&
-      newEvent.address &&
-      newEvent.city &&
-      newEvent.state &&
-      newEvent.zip &&
-      newEvent.description) {
-      onSubmit(this.state.newEvent);
-      this.setState({newEvent: defaultEvent});
-    } else {
-      alert('dear god why???');
-    }
+    newEvent.location &&
+    newEvent.address &&
+    newEvent.city &&
+    newEvent.state &&
+    newEvent.zip &&
+    newEvent.description
+      ? onFormSubmit(newEvent) && this.setState({newEvent: defaultEvent})
+      : alert('dear god why???');
   }
 
   render () {
     const {newEvent} = this.state;
     return (
-      <div className="col-xs-8 col-xs-offset-2">
+      <div className={this.state.showEventForm || this.props.showEventForm ? 'col-xs-8 col-xs-offset-2' : 'hide'}>
         <h2 className="">Add an event:</h2>
         <form className="form-horizontal" onSubmit={this.formSubmit}>
-          <div className="form-group">
-            <label htmlFor="team1">Team One:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="team1"
-              placeholder="Chiefs"
-              value={newEvent.team1}
-              onChange={this.team1Change}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="team2">Team Two:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="team2"
-              placeholder="Chargers"
-              value={newEvent.team2}
-              onChange={this.team2Change}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="datetime-local">Date</label>
-            <input
-              type="datetime-local"
-              class="form-control"
-              id="date"
-              placeholder="MM/DD/YYYY"
-              value={newEvent.date}
-              onChange={this.dateChange}
-            />
-          </div>
           <div className="form-group">
             <label htmlFor="location">Location</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="location"
               placeholder="Double Dogs"
               value={newEvent.location}
@@ -152,7 +94,7 @@ class EventForm extends React.Component {
             <label htmlFor="address">Address</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="address"
               placeholder="1234 Main Street"
               value={newEvent.address}
@@ -163,7 +105,7 @@ class EventForm extends React.Component {
             <label htmlFor="city">City</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="city"
               placeholder="Nashville"
               value={newEvent.city}
@@ -174,7 +116,7 @@ class EventForm extends React.Component {
             <label htmlFor="state">State</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="state"
               placeholder="TN"
               value={newEvent.state}
@@ -185,8 +127,8 @@ class EventForm extends React.Component {
             <label htmlFor="zip">Zip Code</label>
             <input
               type="text"
-              // pattern="[0-9]{5}"
-              class="form-control"
+              pattern="[0-9]{5}"
+              className="form-control"
               id="zip"
               placeholder="37215"
               value={newEvent.zip}
@@ -197,7 +139,7 @@ class EventForm extends React.Component {
             <label htmlFor="description">Description</label>
             <textarea
               type="text"
-              class="form-control"
+              className="form-control"
               rows="3"
               id="description"
               placeholder="See you there!"
