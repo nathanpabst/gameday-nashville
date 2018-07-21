@@ -9,7 +9,7 @@
     "address": "1234 blah blah",
     "details": "I'll see you there or I will see you not there.",
     "time": "3:05 PM",
-    "teamOne": "Kansas City Chiefs",
-    "teamTwo": "San Diego Chargers"
+    "gameId": "",
+    "teamId": ""
   }
 }

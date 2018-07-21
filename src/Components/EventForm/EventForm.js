@@ -185,7 +185,7 @@ class EventForm extends React.Component {
             <label htmlFor="zip">Zip Code</label>
             <input
               type="text"
-              pattern="[0-9]{5}"
+              // pattern="[0-9]{5}"
               class="form-control"
               id="zip"
               placeholder="37215"
@@ -205,6 +205,9 @@ class EventForm extends React.Component {
               onChange={this.descriptionChange}
             />
           </div>
+          <button className="btn btn-primary">
+            Save Event
+          </button>
         </form>
       </div>
     );
