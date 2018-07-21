@@ -14,12 +14,9 @@ class CreateEvent extends React.Component {
     }
     onFormSubmit = (newEvent) => {
       const {gameDeets} = this.state;
-      console.log({gameDeets});
+      console.error({gameDeets});
     }
-    // addEventDetails () {
-    //   this.setState({selectedEvent: !this.state.selectedEvent});
-    //   console.error('from ce', !this.state.selectedEvent);
-    // }
+
     updateGameDeets = gameDeets => this.setState({gameDeets})
     render () {
       return (
@@ -34,8 +31,6 @@ class CreateEvent extends React.Component {
             <EventForm
               showEventForm = {this.state.showEventForm}
               onFormSubmit={this.onFormSubmit}
-              // selectedGameDeets={this.state.gameDeets}
-              // addEventDetails = {this.state.addEventDetails.bind(this)}
 
             />
           </div>

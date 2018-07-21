@@ -76,7 +76,7 @@ class EventForm extends React.Component {
   render () {
     const {newEvent} = this.state;
     return (
-      <div className={console.error('from ef', this.state.showEventForm) || this.props.showEventForm ? 'col-xs-8 col-xs-offset-2' : 'hide'}>
+      <div className={this.state.showEventForm || this.props.showEventForm ? 'col-xs-8 col-xs-offset-2' : 'hide'}>
         <h2 className="">Add an event:</h2>
         <form className="form-horizontal" onSubmit={this.formSubmit}>
           <div className="form-group">
