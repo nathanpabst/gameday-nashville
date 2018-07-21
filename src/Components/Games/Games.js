@@ -29,6 +29,11 @@ class Games extends React.Component {
               <td>{game.dateTime}</td>
               <td>{game.homeTeam}</td>
               <td>{game.awayTeam}</td>
+              <td>
+                <button className="btn btn-primary">
+                  Create Event
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
