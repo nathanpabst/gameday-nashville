@@ -15,7 +15,7 @@ const defaultEvent = {
 
 class EventForm extends React.Component {
   static propTypes = {
-    onFormSubmit: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
     // selectedGameDeets: PropTypes.object.isRequired,
   }
 
@@ -60,7 +60,7 @@ class EventForm extends React.Component {
   }
 
   formSubmit = (e) => {
-    const {onFormSubmit} = this.props;
+    const {onSubmit} = this.props;
     const {newEvent} = this.state;
     e.preventDefault();
     newEvent.location &&
@@ -69,7 +69,7 @@ class EventForm extends React.Component {
     newEvent.state &&
     newEvent.zip &&
     newEvent.description
-      ? onFormSubmit(newEvent) && this.setState({newEvent: defaultEvent})
+      ? onSubmit(newEvent) && this.setState({newEvent: defaultEvent})
       : alert('dear god why???');
   }
 

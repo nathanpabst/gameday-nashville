@@ -18,7 +18,7 @@ class CreateEvent extends React.Component {
       this.setState({showEventForm: !this.state.showEventForm});
     }
 
-    onFormSubmit = (newEvent) => {
+    formSubmitEvent = (newEvent) => {
       const {gameDeets} = this.state;
       const {saveNewEvent} = this.state;
       console.error({gameDeets});
@@ -48,8 +48,8 @@ class CreateEvent extends React.Component {
           <div className="col-sm-6">
             <EventForm
               showEventForm = {this.state.showEventForm}
-              // saveNewEvent={this.state.saveNewEvent}
-              onSubmit={this.onFormSubmit}
+              saveNewEvent={this.state.saveNewEvent}
+              onSubmit={this.formSubmitEvent}
 
             />
           </div>
