@@ -2,14 +2,14 @@ import React from 'react';
 
 import './EventListing.css';
 
-import getAllEvents from '../../firebaseRequests/events';
+import fbEvents from '../../firebaseRequests/events';
 
 class EventListing extends React.Component {
   state = {
     events: [],
   }
   componentDidMount () {
-    getAllEvents()
+    fbEvents.getAllEvents()
       .then((events) => {
         this.setState({events});
       })
