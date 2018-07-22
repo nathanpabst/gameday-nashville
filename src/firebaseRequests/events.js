@@ -21,4 +21,18 @@ const getAllEvents = () => {
   });
 };
 
-export default getAllEvents;
+const postEvent = (newEvent) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .post(`${constants.firebaseConfig.databaseURL}/Events.json`, newEvent)
+      .then((res) => {
+        resolve(res);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+
+};
+
+export default { getAllEvents, postEvent };
