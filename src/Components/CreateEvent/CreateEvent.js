@@ -11,19 +11,20 @@ class CreateEvent extends React.Component {
     state = {
       showEventForm: false,
       gameDeets: {},
-      saveNewEvent: {},
+      events: {},
     };
 
     toggleShowEventForm = () => {
       this.setState({showEventForm: !this.state.showEventForm});
     }
 
-    formSubmitEvent = (newEvent) => {
+    formSubmitEvent = (newEvent, gameData) => {
+      console.error('from CE', newEvent);
       const {gameDeets} = this.state;
-      const {saveNewEvent} = this.state;
+      // const {saveNewEvent} = this.setState;
       console.error({gameDeets});
-      console.error({saveNewEvent});
-      fbEvents.postEvent(newEvent)
+      // console.error({saveNewEvent});
+      fbEvents.postEvent(newEvent, gameDeets)
         .then(() => {
           fbEvents.getAllEvents()
             .then((events) => {
@@ -48,7 +49,7 @@ class CreateEvent extends React.Component {
           <div className="col-sm-6">
             <EventForm
               showEventForm = {this.state.showEventForm}
-              saveNewEvent={this.state.saveNewEvent}
+              // saveNewEvent={this.state.saveNewEvent}
               onSubmit={this.formSubmitEvent}
 
             />
