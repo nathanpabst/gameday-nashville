@@ -2,9 +2,6 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import postEvent from '../../firebaseRequests/events';
-import authRequest from '../../firebaseRequests/auth';
-
 import './EventForm.css';
 
 const defaultEvent = {
@@ -26,18 +23,6 @@ class EventForm extends React.Component {
     newEvent: defaultEvent,
     showEventForm: this.props.showEventForm,
   }
-
-  saveNewEvent = () => {
-    const newEvent = {event: {...this.state.event}};
-    newEvent.uid = authRequest.getUid();
-    postEvent(newEvent)
-      .then(() => {
-        this.props.history.push('/myEvents');
-      })
-      .catch((error) => {
-        console.error('error in posting new event', error);
-      });
-  };
 
   formFieldStringState = (name, e) => {
     const tempEvent = {...this.state.newEvent};
@@ -162,7 +147,7 @@ class EventForm extends React.Component {
               onChange={this.descriptionChange}
             />
           </div>
-          <button className="btn btn-primary" onClick={this.onFormSubmit}>
+          <button className="btn btn-primary">
             Save Event
           </button>
         </form>

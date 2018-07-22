@@ -1,8 +1,11 @@
 import React from 'react';
 
-import './CreateEvent.css';
+import fbEvents from '../../firebaseRequests/events';
+
 import EventForm from '../EventForm/EventForm';
 import Games from '../Games/Games';
+
+import './CreateEvent.css';
 
 class CreateEvent extends React.Component {
     state = {
@@ -10,13 +13,26 @@ class CreateEvent extends React.Component {
       gameDeets: {},
       saveNewEvent: {},
     };
+
     toggleShowEventForm = () => {
       this.setState({showEventForm: !this.state.showEventForm});
     }
+
     onFormSubmit = (newEvent) => {
       const {gameDeets} = this.state;
       const {saveNewEvent} = this.state;
       console.error({gameDeets});
+      console.error({saveNewEvent});
+      fbEvents.postEvent(newEvent)
+        .then(() => {
+          fbEvents.getAllEvents()
+            .then((events) => {
+              this.setState({events});
+            });
+        })
+        .catch((error) => {
+          console.error('error in posting new event', error);
+        });
     }
 
     updateGameDeets = gameDeets => this.setState({gameDeets})
@@ -32,8 +48,8 @@ class CreateEvent extends React.Component {
           <div className="col-sm-6">
             <EventForm
               showEventForm = {this.state.showEventForm}
-              onFormSubmit={this.onFormSubmit}
-              saveNewEvent={this.state.saveNewEvent}
+              // saveNewEvent={this.state.saveNewEvent}
+              onSubmit={this.onFormSubmit}
 
             />
           </div>
