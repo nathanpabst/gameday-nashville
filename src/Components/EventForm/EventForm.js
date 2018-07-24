@@ -16,12 +16,12 @@ const defaultEvent = {
 class EventForm extends React.Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    // selectedGameDeets: PropTypes.object.isRequired,
   }
 
   state = {
     newEvent: defaultEvent,
     showEventForm: this.props.showEventForm,
+    gameDeets: this.props.gameDeets,
   }
 
   formFieldStringState = (name, e) => {
