@@ -1,6 +1,8 @@
 import axios from 'axios';
 import constants from '../constants';
 
+import authRequests from '../firebaseRequests/auth';
+
 const getAllEvents = () => {
   return new Promise((resolve, reject) => {
     axios
@@ -22,9 +24,11 @@ const getAllEvents = () => {
 };
 
 const postEvent = (newEvent, gameDeets) => {
+  const newPost = {...newEvent, ...gameDeets};
+  newPost.uid = authRequests.getUid();
   return new Promise((resolve, reject) => {
     axios
-      .post(`${constants.firebaseConfig.databaseURL}/Events.json`, {...newEvent, ...gameDeets})
+      .post(`${constants.firebaseConfig.databaseURL}/Events.json`, newPost)
       .then((res) => {
         resolve(res);
       })
@@ -32,7 +36,26 @@ const postEvent = (newEvent, gameDeets) => {
         reject(error);
       });
   });
-
 };
 
-export default { getAllEvents, postEvent };
+const getMyEvents = (uid) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`${constants.firebaseConfig.databaseURL}/Events.json?orderBy="uid"&equalTo="${uid}"`)
+      .then(res => {
+        const events = [];
+        if (res.data !== null) {
+          Object.keys(res.data).forEach(fbKey => {
+            res.data[fbKey].id = fbKey;
+            events.push(res.data[fbKey]);
+          });
+        }
+        resolve(events);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });
+};
+
+export default { getAllEvents, postEvent, getMyEvents };
