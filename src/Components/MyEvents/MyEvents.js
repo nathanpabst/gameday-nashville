@@ -23,10 +23,12 @@ class MyEvents extends React.Component {
 
   deleteClickEvent = () => {
     const firebaseId = this.props.match.params.id;
+    console.error('from MyEvents', firebaseId);
+
     fbEvents
       .deleteMyEvent(firebaseId)
       .then(() => {
-        this.props.history.push('/Events');
+        this.props.history.push('/myEvents');
       })
       .catch(((err) => {
         console.error('error with deleting event', err);
@@ -37,7 +39,7 @@ class MyEvents extends React.Component {
     const {events} = this.state;
     const eventComponents = events.map((event) => (
       <div key={event.id} className="row">
-        <div className="col-xs-6 col-md-3">
+        <div className="col-sm-4">
           <div className="thumbnail eventThumbnail">
             <img src="https://media.bizj.us/view/img/3507951/kansas-city-chiefs-mark*750xx681-384-192-110.jpg" alt="team-logo" />
             <div className="caption">
