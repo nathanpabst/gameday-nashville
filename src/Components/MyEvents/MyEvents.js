@@ -20,6 +20,19 @@ class MyEvents extends React.Component {
         console.error('error with retrieving events', error);
       });
   }
+
+  deleteClickEvent = () => {
+    const firebaseId = this.props.match.params.id;
+    fbEvents
+      .deleteMyEvent(firebaseId)
+      .then(() => {
+        this.props.history.push('/Events');
+      })
+      .catch(((err) => {
+        console.error('error with deleting event', err);
+      }));
+  }
+
   render () {
     const {events} = this.state;
     const eventComponents = events.map((event) => (
@@ -33,8 +46,8 @@ class MyEvents extends React.Component {
               <p>{event.location}</p>
               <p>{event.address}</p>
               <p>{event.city}, {event.state}</p>
-              <p>{event.description}</p>
-              <p><button type="button" className="btn btn-primary">Edit</button> <button type="button" className="btn btn-default">Delete</button></p>
+              <p>{event.details}</p>
+              <p><button type="button" className="btn btn-primary">Edit</button> <button type="button" className="btn btn-default" onClick={this.deleteClickEvent}>Delete</button></p>
             </div>
           </div>
         </div>
