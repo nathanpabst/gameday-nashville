@@ -21,10 +21,10 @@ const getAllEvents = () => {
   });
 };
 
-const postEvent = (newEvent) => {
+const postEvent = (newEvent, gameDeets) => {
   return new Promise((resolve, reject) => {
     axios
-      .post(`${constants.firebaseConfig.databaseURL}/Events.json`, newEvent)
+      .post(`${constants.firebaseConfig.databaseURL}/Events.json`, {...newEvent, ...gameDeets})
       .then((res) => {
         resolve(res);
       })
