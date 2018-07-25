@@ -39,6 +39,18 @@ class MyEvents extends React.Component {
       }));
   }
 
+  editClickEvent = (e) => {
+
+    fbEvents
+      .updateEvent(e.target.id, this.state.event)
+      .then(() => {
+
+      })
+      .catch((err) => {
+        console.error('error with updating details', err);
+      });
+  }
+
   render () {
     const { events } = this.state;
     const eventComponents = events.map((event) => (
@@ -53,7 +65,7 @@ class MyEvents extends React.Component {
               <p>{event.address}</p>
               <p>{event.city}, {event.state}</p>
               <p>{event.details}</p>
-              <p><button type="button" className="btn btn-primary">Edit</button> <button type="button" className="btn btn-default" id={event.id} onClick={this.deleteClickEvent}>Delete</button></p>
+              <p><button type="button" className="btn btn-primary" id={event.id} onClick={this.editClickEvent}>Edit Details</button> <button type="button" className="btn btn-danger" id={event.id} onClick={this.deleteClickEvent}>Delete Event</button></p>
             </div>
           </div>
         </div>

@@ -71,4 +71,17 @@ const deleteMyEvent = (eventId) => {
   });
 };
 
-export default { getAllEvents, postEvent, getMyEvents, deleteMyEvent };
+const updateEvent = (eventId, updatedEvent) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .put(`${constants.firebaseConfig.databaseURL}/Events/${eventId}.json`, updatedEvent)
+      .then((res) => {
+        resolve(res);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+};
+
+export default { getAllEvents, postEvent, getMyEvents, deleteMyEvent, updateEvent };
