@@ -4,7 +4,6 @@ import firebase from 'firebase';
 
 import './App.css';
 
-// import Home from '../Components/Home/Home';
 import Navbar from '../Components/Navbar/Navbar';
 import MyEvents from '../Components/MyEvents/MyEvents';
 import CreateEvent from '../Components/CreateEvent/CreateEvent';

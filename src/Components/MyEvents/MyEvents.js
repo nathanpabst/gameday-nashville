@@ -14,22 +14,48 @@ class MyEvents extends React.Component {
     fbEvents
       .getMyEvents(authRequests.getUid())
       .then((events) => {
-        this.setState({events});
+        this.setState({ events });
       })
       .catch((error) => {
         console.error('error with retrieving events', error);
       });
   }
+
+  deleteClickEvent = (e) => {
+    fbEvents
+      .deleteMyEvent(e.target.id)
+      .then(() => {
+        fbEvents
+          .getMyEvents(authRequests.getUid())
+          .then((events) => {
+            this.setState({ events });
+          })
+          .catch((error) => {
+            console.error('error with retrieving events', error);
+          });
+      })
+      .catch(((err) => {
+        console.error('error with deleting event', err);
+      }));
+  }
+
   render () {
-    const {events} = this.state;
+    const { events } = this.state;
     const eventComponents = events.map((event) => (
-      <div key={event.id} className="card col-sm-4">
-        <div className="card-body">
-          <h3 className="card-title">{event.homeTeam} vs. {event.awayTeam}</h3>
-          <h4 className="card-text">{event.dateTime}</h4>
-          <p className="card-text">{event.location}</p>
-          <p className="card-text">{event.address}</p>
-          <p className="card-text">{event.city}, {event.state}</p>
+      <div key={event.id} className="row">
+        <div className="col-sm-4">
+          <div className="thumbnail eventThumbnail">
+            <img src="https://media.bizj.us/view/img/3507951/kansas-city-chiefs-mark*750xx681-384-192-110.jpg" alt="team-logo" />
+            <div className="caption">
+              <h3>{event.dateTime}</h3>
+              <h4>{event.homeTeam} vs. {event.awayTeam}</h4>
+              <p>{event.location}</p>
+              <p>{event.address}</p>
+              <p>{event.city}, {event.state}</p>
+              <p>{event.details}</p>
+              <p><button type="button" className="btn btn-primary">Edit</button> <button type="button" className="btn btn-default" id={event.id} onClick={this.deleteClickEvent}>Delete</button></p>
+            </div>
+          </div>
         </div>
       </div>
     ));

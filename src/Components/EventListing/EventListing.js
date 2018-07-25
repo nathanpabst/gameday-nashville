@@ -20,7 +20,7 @@ class EventListing extends React.Component {
   render () {
     const {events} = this.state;
     const eventComponents = events.map((event) => (
-      <div key={event.uid} className="card col-sm-4">
+      <div key={event.id} className="card col-sm-4">
         <div className="card-body">
           <h3 className="card-title">{event.homeTeam} vs. {event.awayTeam}</h3>
           <h4 className="card-text">{event.dateTime}</h4>
