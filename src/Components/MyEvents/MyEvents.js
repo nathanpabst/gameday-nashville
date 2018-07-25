@@ -14,21 +14,25 @@ class MyEvents extends React.Component {
     fbEvents
       .getMyEvents(authRequests.getUid())
       .then((events) => {
-        this.setState({events});
+        this.setState({ events });
       })
       .catch((error) => {
         console.error('error with retrieving events', error);
       });
   }
 
-  deleteClickEvent = () => {
-    const firebaseId = this.props.match.params.id;
-    console.error('from MyEvents', firebaseId);
-
+  deleteClickEvent = (e) => {
     fbEvents
-      .deleteMyEvent(firebaseId)
+      .deleteMyEvent(e.target.id)
       .then(() => {
-        this.props.history.push('/myEvents');
+        fbEvents
+          .getMyEvents(authRequests.getUid())
+          .then((events) => {
+            this.setState({ events });
+          })
+          .catch((error) => {
+            console.error('error with retrieving events', error);
+          });
       })
       .catch(((err) => {
         console.error('error with deleting event', err);
@@ -36,7 +40,7 @@ class MyEvents extends React.Component {
   }
 
   render () {
-    const {events} = this.state;
+    const { events } = this.state;
     const eventComponents = events.map((event) => (
       <div key={event.id} className="row">
         <div className="col-sm-4">
@@ -49,7 +53,7 @@ class MyEvents extends React.Component {
               <p>{event.address}</p>
               <p>{event.city}, {event.state}</p>
               <p>{event.details}</p>
-              <p><button type="button" className="btn btn-primary">Edit</button> <button type="button" className="btn btn-default" onClick={this.deleteClickEvent}>Delete</button></p>
+              <p><button type="button" className="btn btn-primary">Edit</button> <button type="button" className="btn btn-default" id={event.id} onClick={this.deleteClickEvent}>Delete</button></p>
             </div>
           </div>
         </div>
