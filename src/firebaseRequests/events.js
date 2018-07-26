@@ -71,10 +71,10 @@ const deleteMyEvent = (eventId) => {
   });
 };
 
-const updateEvent = (eventId, updatedEvent) => {
+const updateEvent = (eventId, updateEvent) => {
   return new Promise((resolve, reject) => {
     axios
-      .put(`${constants.firebaseConfig.databaseURL}/Events/${eventId}.json`, updatedEvent)
+      .put(`${constants.firebaseConfig.databaseURL}/Events/${eventId}.json`, updateEvent)
       .then((res) => {
         resolve(res);
       })

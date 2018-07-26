@@ -8,8 +8,12 @@ import './MyEvents.css';
 
 class MyEvents extends React.Component {
   state = {
+    event: {
+      details: '',
+    },
     events: [],
   }
+
   componentDidMount () {
     fbEvents
       .getMyEvents(authRequests.getUid())
@@ -38,18 +42,30 @@ class MyEvents extends React.Component {
         console.error('error with deleting event', err);
       }));
   }
+  handleInputChange = (e) => {
+    const details = e.target.value;
+    this.setState({event: {
+      ...this.state.event,
+      details,
+    }});
+  }
 
-  editClickEvent = (e) => {
+  editClickEvent = (event) => {
+    this.setState({event});
+  }
+
+  saveClickEvent = () => {
+    console.error('from MyEvents', this.state.event);
 
     fbEvents
-      .updateEvent(e.target.id, this.state.event)
+      .updateEvent(this.state.event)
       .then(() => {
 
       })
       .catch((err) => {
         console.error('error with updating details', err);
       });
-  }
+  };
 
   render () {
     const { events } = this.state;
@@ -65,9 +81,18 @@ class MyEvents extends React.Component {
               <p>{event.address}</p>
               <p>{event.city}, {event.state}</p>
               <p>{event.details}</p>
-              <p><button type="button" className="btn btn-primary" id={event.id} onClick={this.editClickEvent}>Edit Details</button> <button type="button" className="btn btn-danger" id={event.id} onClick={this.deleteClickEvent}>Delete Event</button></p>
+              <p><button type="button" className="btn btn-primary" id={event.id} onClick={() => this.editClickEvent(event)}>Edit Details</button> <button type="button" className="btn btn-danger" id={event.id} onClick={this.deleteClickEvent}>Delete Event</button></p>
             </div>
           </div>
+        </div>
+        <div className="col-sm-4">
+          <input
+            type="text"
+            onChange={this.handleInputChange}
+            value={this.state.event.details}
+            className="form-control"
+          />
+          <button className="btn btn-default" type="button" onClick={this.saveClickEvent}>Save</button>
         </div>
       </div>
     ));
