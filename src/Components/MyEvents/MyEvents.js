@@ -8,8 +8,12 @@ import './MyEvents.css';
 
 class MyEvents extends React.Component {
   state = {
+    event: {
+      details: '',
+    },
     events: [],
   }
+
   componentDidMount () {
     fbEvents
       .getMyEvents(authRequests.getUid())
@@ -39,6 +43,31 @@ class MyEvents extends React.Component {
       }));
   }
 
+  handleInputChange = (e) => {
+    const details = e.target.value;
+    this.setState({event: {
+      ...this.state.event,
+      details,
+    }});
+  }
+
+  editClickEvent = (event) => {
+    this.setState({event});
+  }
+
+  saveClickEvent = () => {
+    console.error('from MyEvents', this.state.event);
+    const eventId = this.state.event.id;
+    fbEvents
+      .putEvent(eventId, this.state.event)
+      .then(() => {
+
+      })
+      .catch((err) => {
+        console.error('error with updating details', err);
+      });
+  };
+
   render () {
     const { events } = this.state;
     const eventComponents = events.map((event) => (
@@ -53,9 +82,18 @@ class MyEvents extends React.Component {
               <p>{event.address}</p>
               <p>{event.city}, {event.state}</p>
               <p>{event.details}</p>
-              <p><button type="button" className="btn btn-primary">Edit</button> <button type="button" className="btn btn-default" id={event.id} onClick={this.deleteClickEvent}>Delete</button></p>
+              <p><button type="button" className="btn btn-primary" id={event.id} onClick={() => this.editClickEvent(event)}>Edit Details</button> <button type="button" className="btn btn-danger" id={event.id} onClick={this.deleteClickEvent}>Delete Event</button></p>
             </div>
           </div>
+        </div>
+        <div className="col-sm-4">
+          <input
+            type="text"
+            onChange={this.handleInputChange}
+            value={this.state.event.details}
+            className="form-control"
+          />
+          <button className="btn btn-default" type="button" onClick={this.saveClickEvent}>Save</button>
         </div>
       </div>
     ));
