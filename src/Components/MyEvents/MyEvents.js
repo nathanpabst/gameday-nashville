@@ -42,6 +42,7 @@ class MyEvents extends React.Component {
         console.error('error with deleting event', err);
       }));
   }
+
   handleInputChange = (e) => {
     const details = e.target.value;
     this.setState({event: {
@@ -56,9 +57,9 @@ class MyEvents extends React.Component {
 
   saveClickEvent = () => {
     console.error('from MyEvents', this.state.event);
-
+    const eventId = this.state.event.id;
     fbEvents
-      .updateEvent(this.state.event)
+      .putEvent(eventId, this.state.event)
       .then(() => {
 
       })

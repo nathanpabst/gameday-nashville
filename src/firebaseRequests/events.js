@@ -71,7 +71,7 @@ const deleteMyEvent = (eventId) => {
   });
 };
 
-const updateEvent = (eventId, updateEvent) => {
+const putEvent = (eventId, updateEvent) => {
   return new Promise((resolve, reject) => {
     axios
       .put(`${constants.firebaseConfig.databaseURL}/Events/${eventId}.json`, updateEvent)
@@ -84,4 +84,4 @@ const updateEvent = (eventId, updateEvent) => {
   });
 };
 
-export default { getAllEvents, postEvent, getMyEvents, deleteMyEvent, updateEvent };
+export default { getAllEvents, postEvent, getMyEvents, deleteMyEvent, putEvent };
