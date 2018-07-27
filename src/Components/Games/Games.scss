@@ -2,3 +2,14 @@
   height: 30px;
   width: 30px;
 }
+
+.table-bordered>tbody>tr>td {
+  border: none;
+}
+
+.table {
+  margin: auto;
+}
+.gameComp {
+  padding: 5px;
+}

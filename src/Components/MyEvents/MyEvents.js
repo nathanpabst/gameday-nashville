@@ -56,7 +56,6 @@ class MyEvents extends React.Component {
   }
 
   saveClickEvent = () => {
-    console.error('from MyEvents', this.state.event);
     const eventId = this.state.event.id;
     fbEvents
       .putEvent(eventId, this.state.event)
@@ -86,7 +85,7 @@ class MyEvents extends React.Component {
             </div>
           </div>
         </div>
-        <div className="col-sm-4">
+        <div className="col-sm-4 editBox">
           <input
             type="text"
             onChange={this.handleInputChange}

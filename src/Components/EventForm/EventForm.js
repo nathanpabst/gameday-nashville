@@ -10,7 +10,7 @@ const defaultEvent = {
   city: '',
   state: '',
   zip: 0,
-  description: '',
+  details: '',
 };
 
 class EventForm extends React.Component {
@@ -55,8 +55,8 @@ class EventForm extends React.Component {
     this.formFieldNumberState('zip', e);
   };
 
-  descriptionChange = (e) => {
-    this.formFieldStringState('description', e);
+  detailChange = (e) => {
+    this.formFieldStringState('details', e);
   }
 
   formSubmit = (e) => {
@@ -68,7 +68,7 @@ class EventForm extends React.Component {
     newEvent.city &&
     newEvent.state &&
     newEvent.zip &&
-    newEvent.description
+    newEvent.details
       ? onSubmit(newEvent) && this.setState({newEvent: defaultEvent})
       : alert('dear god why???');
   }
@@ -136,15 +136,15 @@ class EventForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="description">Description</label>
+            <label htmlFor="details">Details</label>
             <textarea
               type="text"
               className="form-control"
               rows="3"
-              id="description"
+              id="details"
               placeholder="See you there!"
-              value={newEvent.description}
-              onChange={this.descriptionChange}
+              value={newEvent.details}
+              onChange={this.detailChange}
             />
           </div>
           <button className="btn btn-primary">
