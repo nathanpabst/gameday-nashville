@@ -16,7 +16,7 @@ class Search extends React.Component {
   render () {
     return (
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-sm-5 searchBar">
           <div class="input-group">
             <input
               type="text" className="form-control"

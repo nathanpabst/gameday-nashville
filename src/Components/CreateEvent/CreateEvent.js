@@ -4,6 +4,7 @@ import fbEvents from '../../firebaseRequests/events';
 
 import EventForm from '../EventForm/EventForm';
 import Games from '../Games/Games';
+import Search from '../Search/Search';
 
 import './CreateEvent.css';
 
@@ -36,6 +37,10 @@ class CreateEvent extends React.Component {
     render () {
       return (
         <div className="CreateEvent">
+          <Search
+            onSubmit={this.formSubmitEvent}
+            gameDeets = {this.state.gameDeets}
+          />
           <div className="col-sm-6">
             <Games
               toggleShowEventForm = {this.toggleShowEventForm}
