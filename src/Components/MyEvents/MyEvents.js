@@ -12,6 +12,7 @@ class MyEvents extends React.Component {
       details: '',
     },
     events: [],
+    showEditForm: false,
   }
 
   componentDidMount () {
@@ -42,6 +43,9 @@ class MyEvents extends React.Component {
         console.error('error with deleting event', err);
       }));
   }
+  toggleShowEditForm = () => {
+    this.setState({showEditForm: true });
+  }
 
   handleInputChange = (e) => {
     const details = e.target.value;
@@ -53,6 +57,7 @@ class MyEvents extends React.Component {
 
   editClickEvent = (event) => {
     this.setState({event});
+    this.toggleShowEditForm();
   }
 
   saveClickEvent = () => {
@@ -85,7 +90,7 @@ class MyEvents extends React.Component {
             </div>
           </div>
         </div>
-        <div className="col-sm-4 editBox">
+        <div className={this.state.showEditForm ? 'col-sm-4' : 'hide'}>
           <input
             type="text"
             onChange={this.handleInputChange}
