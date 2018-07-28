@@ -31,12 +31,10 @@ class Games extends React.Component {
   render () {
     const { games } = this.state;
     const gameComponents = games.map((game) => (
-      <div key={game.id} className="panel panel-default">
-        <div className="panel-heading Games">2018 Schedule</div>
+      <div key={game.id}>
         <table className="table table-bordered table-striped">
           <tbody>
             <tr>
-              <td>{game.weekNum}</td>
               <td>{game.dateTime}</td>
               <td>{game.homeTeam}</td>
               <td>{game.awayTeam}</td>
@@ -52,7 +50,12 @@ class Games extends React.Component {
     ));
     return (
       <div className="Games">
-        <ul>{gameComponents}</ul>
+        <div class="panel panel-primary">
+          <div class="panel-heading">2018 Schedule</div>
+          <div class="panel-body">
+            <ul className="gameComp">{gameComponents}</ul>
+          </div>
+        </div>
       </div>
     );
   }
