@@ -26,7 +26,10 @@ class SingleEvent extends React.Component {
   }
 
   handleSave = () => {
-    this.props.handleSaveClickEvent(this.props.event.id, this.state.event);
+    this.props.handleSaveClickEvent(this.props.event.id, this.state.event)
+      .then(() => {
+        this.toggleShowEditForm();
+      });
   }
 
   deleteClickEvent = () => {

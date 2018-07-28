@@ -42,7 +42,7 @@ class MyEvents extends React.Component {
   }
 
   saveClickEvent = (id, event) => {
-    fbEvents
+    return fbEvents
       .putEvent(id, event)
       .then(() => {
         fbEvents
