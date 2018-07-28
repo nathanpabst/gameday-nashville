@@ -8,6 +8,7 @@ class Games extends React.Component {
     state = {
       games: [],
       event: {},
+      originalGames: [],
     };
 
   selectedEvent = (game) => {
@@ -20,11 +21,21 @@ class Games extends React.Component {
   componentDidMount () {
     getAllGames()
       .then((games) => {
+
         this.setState({ games });
+        this.setState({ originalGames: games });
+
       })
       .catch((error) => {
         console.error('error with games GET request', error);
       });
+  }
+
+  componentWillReceiveProps () {
+    const searchInput = this.props.searchTerm;
+    const games = [...this.state.originalGames];
+    const filterGames = games.filter(game => game.homeTeam.toLowerCase().includes(searchInput.toLowerCase()));
+    this.setState({games: filterGames});
   }
 
   render () {

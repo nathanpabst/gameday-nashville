@@ -8,9 +8,9 @@ class Search extends React.Component {
   }
 
   handleInputChange = () => {
-    this.setState({
-      userInput: this.search.value,
-    });
+    this.props.onSearch(
+      this.search.value,
+    );
   }
 
   render () {
@@ -27,7 +27,6 @@ class Search extends React.Component {
             <span className="input-group-btn">
               <button className="btn btn-default" type="button">Go!</button>
             </span>
-            <p>{this.state.userInput}</p>
           </div>
         </div>
       </div>
