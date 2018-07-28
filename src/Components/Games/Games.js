@@ -70,7 +70,7 @@ class Games extends React.Component {
     return (
       <div className="Games">
         <div className="panel panel-primary">
-          <div className="panel-heading">2018 Schedule</div>
+          <div className="panel-heading">2018 Games</div>
           <div className="panel-body">
             <ul className="gameComp">{gameComponents}</ul>
           </div>

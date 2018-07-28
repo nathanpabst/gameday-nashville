@@ -63,6 +63,7 @@ class MyEvents extends React.Component {
     const { events } = this.state;
     const eventComponents = events.map((event) =>
       <SingleEvent
+        key={event.id}
         event={event}
         handleSaveClickEvent={this.saveClickEvent}
         handleDeleteEvent={this.deleteClickEvent}
