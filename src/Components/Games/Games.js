@@ -19,11 +19,20 @@ class Games extends React.Component {
   }
 
   componentDidMount () {
+    const keepers = [];
     getAllGames()
       .then((games) => {
-
-        this.setState({ games });
         this.setState({ originalGames: games });
+        const copyOfOriginal = [...games];
+        copyOfOriginal.forEach((game) => {
+          const foundGame = keepers.find((keepGame) => {
+            return keepGame.uniqueGameKey === game.uniqueGameKey;
+          });
+          if (foundGame === undefined) {
+            keepers.push(game);
+          }
+        });
+        this.setState({ games: keepers });
 
       })
       .catch((error) => {
