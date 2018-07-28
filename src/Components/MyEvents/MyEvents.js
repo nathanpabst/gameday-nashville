@@ -42,10 +42,17 @@ class MyEvents extends React.Component {
   }
 
   saveClickEvent = (id, event) => {
-    fbEvents
+    return fbEvents
       .putEvent(id, event)
       .then(() => {
-
+        fbEvents
+          .getMyEvents(authRequests.getUid())
+          .then((events) => {
+            this.setState({ events });
+          })
+          .catch((error) => {
+            console.error('error with retrieving events', error);
+          });
       })
       .catch((err) => {
         console.error('error with updating details', err);
@@ -56,6 +63,7 @@ class MyEvents extends React.Component {
     const { events } = this.state;
     const eventComponents = events.map((event) =>
       <SingleEvent
+        key={event.id}
         event={event}
         handleSaveClickEvent={this.saveClickEvent}
         handleDeleteEvent={this.deleteClickEvent}

@@ -55,8 +55,8 @@ class Games extends React.Component {
           <tbody>
             <tr>
               <td>{game.dateTime}</td>
-              <td>{game.homeTeam}</td>
-              <td>{game.awayTeam}</td>
+              <td><img className="team-logo" alt="teamLogo" src={game.aLogo}/></td>
+              <td><img className="team-logo" alt="teamLogo" src={game.hLogo}/></td>
               <td>
                 <button className="btn btn-primary" onClick={() => this.selectedEvent(game)}>
                   Create Event
@@ -70,7 +70,7 @@ class Games extends React.Component {
     return (
       <div className="Games">
         <div className="panel panel-primary">
-          <div className="panel-heading">2018 Schedule</div>
+          <div className="panel-heading">2018 Games</div>
           <div className="panel-body">
             <ul className="gameComp">{gameComponents}</ul>
           </div>
