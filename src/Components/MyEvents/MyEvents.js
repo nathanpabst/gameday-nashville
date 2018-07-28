@@ -3,16 +3,13 @@ import React from 'react';
 
 import fbEvents from '../../firebaseRequests/events';
 import authRequests from '../../firebaseRequests/auth';
+import SingleEvent from '../SingleEvent/SingleEvent';
 
 import './MyEvents.css';
 
 class MyEvents extends React.Component {
   state = {
-    event: {
-      details: '',
-    },
     events: [],
-    showEditForm: false,
   }
 
   componentDidMount () {
@@ -26,9 +23,9 @@ class MyEvents extends React.Component {
       });
   }
 
-  deleteClickEvent = (e) => {
+  deleteClickEvent = (id) => {
     fbEvents
-      .deleteMyEvent(e.target.id)
+      .deleteMyEvent(id)
       .then(() => {
         fbEvents
           .getMyEvents(authRequests.getUid())
@@ -43,28 +40,12 @@ class MyEvents extends React.Component {
         console.error('error with deleting event', err);
       }));
   }
-  toggleShowEditForm = () => {
-    this.setState({showEditForm: true });
-  }
 
-  handleInputChange = (e) => {
-    const details = e.target.value;
-    this.setState({event: {
-      ...this.state.event,
-      details,
-    }});
-  }
-
-  editClickEvent = (event) => {
-    this.setState({event});
-    this.toggleShowEditForm();
-  }
-
-  saveClickEvent = () => {
-    const eventId = this.state.event.id;
+  saveClickEvent = (id, event) => {
     fbEvents
-      .putEvent(eventId, this.state.event)
+      .putEvent(id, event)
       .then(() => {
+
       })
       .catch((err) => {
         console.error('error with updating details', err);
@@ -73,42 +54,23 @@ class MyEvents extends React.Component {
 
   render () {
     const { events } = this.state;
-    const eventComponents = events.map((event) => (
-      <div key={event.id}>
-        <div className="col-sm-4 col-med-2">
-          <div className="thumbnail eventThumbnail">
-            <img src="https://media.bizj.us/view/img/3507951/kansas-city-chiefs-mark*750xx681-384-192-110.jpg" alt="team-logo" />
-            <div className="caption">
-              <h3>{event.dateTime}</h3>
-              <h4>{event.homeTeam} vs. {event.awayTeam}</h4>
-              <p>{event.location}</p>
-              <p>{event.address}</p>
-              <p>{event.city}, {event.state}</p>
-              <p>{event.details}</p>
-              <p><button type="button" className="btn btn-primary" id={event.id} onClick={() => this.editClickEvent(event)}>Edit Details</button> <button type="button" className="btn btn-danger" id={event.id} onClick={this.deleteClickEvent}>Delete Event</button></p>
-            </div>
-          </div>
-        </div>
-        <div className={this.state.showEditForm ? 'col-sm-4' : 'hide'}>
-          <input
-            type="text"
-            onChange={this.handleInputChange}
-            value={this.state.event.details}
-            className="form-control"
-          />
-          <button className="btn btn-default" type="button" onClick={this.saveClickEvent}>Save</button>
-        </div>
-      </div>
-    ));
+    const eventComponents = events.map((event) =>
+      <SingleEvent
+        event={event}
+        handleSaveClickEvent={this.saveClickEvent}
+        handleDeleteEvent={this.deleteClickEvent}
+      />
+    );
+
     return (
       <div className="MyEvents">
         <header className="top">
           <h1>
             My Hosted Events
           </h1>
-          <ul>
+          <div className="row">
             {eventComponents}
-          </ul>
+          </div >
         </header>
       </div>
     );
