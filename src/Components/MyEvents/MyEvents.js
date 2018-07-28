@@ -45,7 +45,14 @@ class MyEvents extends React.Component {
     fbEvents
       .putEvent(id, event)
       .then(() => {
-
+        fbEvents
+          .getMyEvents(authRequests.getUid())
+          .then((events) => {
+            this.setState({ events });
+          })
+          .catch((error) => {
+            console.error('error with retrieving events', error);
+          });
       })
       .catch((err) => {
         console.error('error with updating details', err);
