@@ -1,72 +1,182 @@
 {
 	"game1": {
     "homeTeam": "Los Angeles",
+    "hLogo": "http://a.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Flac.png",
     "awayTeam": "Kansas City",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
     "dateTime": "Sun, Sep 9 @ 3:05 PM",
+    "uniqueGameKey": "1",
     "weekNum": "1",
     "id": "1"
   },
   "game2": {
     "homeTeam": "Kansas City",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
     "awayTeam": "Los Angeles",
+    "aLogo": "http://a.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Flac.png",
     "dateTime": "Sun, Sep 9 @ 3:05 PM",
+    "uniqueGameKey": "1",
     "weekNum": "1",
     "id": "2"
 },
   "game3": {
     "homeTeam": "Pittsburgh",
+    "hLogo": "http://a4.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fpit.png",
     "awayTeam": "Kansas City",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
     "dateTime": "Sun, Sep 16 @ 12:00 PM",
+    "uniqueGameKey": "2",
     "weekNum": "2",
     "id": "3"
   },
   "game4": {
     "homeTeam": "Kansas City",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
     "awayTeam": "Pittsburgh",
+    "aLogo": "http://a4.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fpit.png",
     "dateTime": "Sun, Sep 16 @ 12:00 PM",
+    "uniqueGameKey": "2",
     "weekNum": "2",
     "id": "4"
   },
   "game5": {
     "homeTeam": "Kansas City",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
     "awayTeam": "San Francisco",
+    "aLogo": "http://a3.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fsf.png",
     "dateTime": "Sun, Sep 23 @ 12:00 PM",
+    "uniqueGameKey": "3",
     "weekNum": "3",
     "id": "5"
   },
   "game6": {
     "homeTeam": "San Francisco",
+    "hLogo": "http://a3.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fsf.png",
     "awayTeam": "Kansas City",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
     "dateTime": "Sun, Sep 23 @ 12:00 PM",
+    "uniqueGameKey": "3",
     "weekNum": "3",
     "id": "6"
   },
   "game7": {
     "homeTeam": "Denver",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fden.png",
     "awayTeam": "Kansas City",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
     "dateTime": "Mon, Oct 1 @ 8:00 PM",
+    "uniqueGameKey": "4",
     "weekNum": "4",
     "id": "7"
   },
   "game8": {
     "homeTeam": "Kansas City",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
     "awayTeam": "Denver",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fden.png",
     "dateTime": "Mon, Oct 1 @ 8:00 PM",
+    "uniqueGameKey": "4",
     "weekNum": "4",
     "id": "8"
   },
   "game9": {
     "homeTeam": "Kansas City",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
     "awayTeam": "Jacksonville",
+    "aLogo": "http://a4.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fjax.png",
     "dateTime": "Sun, Oct 7 @ 12:00 PM",
+    "uniqueGameKey": "5",
     "weekNum": "5",
     "id": "9"
   },
   "game10": {
     "homeTeam": "Jacksonville",
+    "hLogo": "http://a4.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fjax.png",
     "awayTeam": "Kansas City",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
     "dateTime": "Sun, Oct 7 @ 12:00 PM",
+    "uniqueGameKey": "5",
     "weekNum": "5",
     "id": "10"
+  },
+  "game11": {
+    "homeTeam": "New England",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fne.png",
+    "awayTeam": "Kansas City",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
+    "dateTime": "Sun, Oct 14 @ 7:20 PM",
+    "uniqueGameKey": "6",
+    "weekNum": "6",
+    "id": "11"
+  },
+  "game12": {
+    "homeTeam": "Kansas City",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
+    "awayTeam": "New England",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fne.png",
+    "dateTime": "Sun, Oct 14 @ 7:20 PM",
+    "uniqueGameKey": "6",
+    "weekNum": "6",
+    "id": "11"
+  },
+  "game13": {
+    "homeTeam": "Cincinnati",
+    "hLogo": "http://a.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fcin.png",
+    "awayTeam": "Kansas City",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
+    "dateTime": "Sun, Oct 21 @ 12:00 PM",
+    "uniqueGameKey": "7",
+    "weekNum": "7",
+    "id": "13"
+  },
+  "game14": {
+    "homeTeam": "Kansas City",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
+    "awayTeam": "Cincinnati",
+    "aLogo": "http://a.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fcin.png",
+    "dateTime": "Sun, Oct 21 @ 12:00 PM",
+    "uniqueGameKey": "7",
+    "weekNum": "7",
+    "id": "14"
+  },
+  "game15": {
+    "homeTeam": "Denver",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fden.png",
+    "awayTeam": "Kansas City",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
+    "dateTime": "Sun, Oct 28 @ 12:00 PM",
+    "uniqueGameKey": "8",
+    "weekNum": "8",
+    "id": "15"
+  },
+  "game16": {
+    "homeTeam": "Kansas City",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
+    "awayTeam": "Denver",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fden.png",
+    "dateTime": "Sun, Oct 28 @ 12:00 PM",
+    "uniqueGameKey": "8",
+    "weekNum": "8",
+    "id": "16"
+  },
+  "game17": {
+    "homeTeam": "Kansas City",
+    "hLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
+    "awayTeam": "Cleveland",
+    "aLogo": "http://a4.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fcle.png",
+    "dateTime": "Sun, Nov 4 @ 12:00 PM",
+    "uniqueGameKey": "9",
+    "weekNum": "9",
+    "id": "17"
+  },
+  "game18": {
+    "homeTeam": "Cleveland",
+    "hLogo": "http://a4.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fcle.png",
+    "awayTeam": "Kansas City",
+    "aLogo": "http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnfl%2F500%2Fkc.png",
+    "dateTime": "Sun, Nov 4 @ 12:00 PM",
+    "uniqueGameKey": "9",
+    "weekNum": "9",
+    "id": "18"
   }
 }
