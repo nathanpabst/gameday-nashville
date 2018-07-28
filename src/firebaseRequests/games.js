@@ -21,4 +21,4 @@ const getAllGames = () => {
   });
 };
 
-export default getAllGames;
+export default {getAllGames};
