@@ -15,17 +15,17 @@ class Search extends React.Component {
 
   render () {
     return (
-      <div class="row">
-        <div class="col-sm-5 searchBar">
-          <div class="input-group">
+      <div className="row">
+        <div className="col-sm-5 searchBar">
+          <div className="input-group">
             <input
               type="text" className="form-control"
               placeholder="Search for team"
               ref={input => this.search = input}
               onChange={this.handleInputChange}
             />
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
+            <span className="input-group-btn">
+              <button className="btn btn-default" type="button">Go!</button>
             </span>
             <p>{this.state.userInput}</p>
           </div>

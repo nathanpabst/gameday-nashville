@@ -65,7 +65,6 @@ class MyEvents extends React.Component {
     fbEvents
       .putEvent(eventId, this.state.event)
       .then(() => {
-
       })
       .catch((err) => {
         console.error('error with updating details', err);
@@ -75,8 +74,8 @@ class MyEvents extends React.Component {
   render () {
     const { events } = this.state;
     const eventComponents = events.map((event) => (
-      <div key={event.id} className="row">
-        <div className="col-sm-4">
+      <div key={event.id}>
+        <div className="col-sm-4 col-med-2">
           <div className="thumbnail eventThumbnail">
             <img src="https://media.bizj.us/view/img/3507951/kansas-city-chiefs-mark*750xx681-384-192-110.jpg" alt="team-logo" />
             <div className="caption">
