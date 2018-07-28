@@ -13,6 +13,7 @@ class CreateEvent extends React.Component {
       showEventForm: false,
       gameDeets: {},
       events: {},
+      searchTerm: '',
     };
 
     toggleShowEventForm = () => {
@@ -33,18 +34,23 @@ class CreateEvent extends React.Component {
         });
     }
 
+    updateSearchInput = (searchTerm) => {
+      this.setState({searchTerm});
+    }
+
     updateGameDeets = gameDeets => this.setState({gameDeets})
     render () {
       return (
         <div className="CreateEvent">
           <Search
-            onSubmit={this.formSubmitEvent}
-            gameDeets = {this.state.gameDeets}
+            onSearch = {this.updateSearchInput}
+            searchTerm = {this.state.searchTerm}
           />
           <div className="col-sm-6">
             <Games
               toggleShowEventForm = {this.toggleShowEventForm}
               updateGameDeets = {this.updateGameDeets}
+              searchTerm = {this.state.searchTerm}
             />
           </div>
           <div className="col-sm-6">
