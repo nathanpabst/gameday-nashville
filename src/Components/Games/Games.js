@@ -2,17 +2,17 @@ import React from 'react';
 
 import './Games.css';
 
-import getAllGames from '../../firebaseRequests/games';
+import fbGames from '../../firebaseRequests/games';
 
 class Games extends React.Component {
-    state = {
-      games: [],
-      event: {},
-      originalGames: [],
-    };
+  state = {
+    games: [],
+    event: {},
+    originalGames: [],
+  };
 
   selectedEvent = (game) => {
-    const {toggleShowEventForm, updateGameDeets} = this.props;
+    const { toggleShowEventForm, updateGameDeets } = this.props;
     this.setState({ event: { ...game } });
     updateGameDeets(game);
     toggleShowEventForm();
@@ -20,7 +20,8 @@ class Games extends React.Component {
 
   componentDidMount () {
     const keepers = [];
-    getAllGames()
+    fbGames
+      .getAllGames()
       .then((games) => {
         this.setState({ originalGames: games });
         const copyOfOriginal = [...games];
@@ -44,7 +45,7 @@ class Games extends React.Component {
     const searchInput = this.props.searchTerm;
     const games = [...this.state.originalGames];
     const filterGames = games.filter(game => game.homeTeam.toLowerCase().includes(searchInput.toLowerCase()));
-    this.setState({games: filterGames});
+    this.setState({ games: filterGames });
   }
 
   render () {
@@ -55,8 +56,8 @@ class Games extends React.Component {
           <tbody>
             <tr>
               <td>{game.dateTime}</td>
-              <td><img className="team-logo" alt="teamLogo" src={game.aLogo}/></td>
-              <td><img className="team-logo" alt="teamLogo" src={game.hLogo}/></td>
+              <td><img className="team-logo" alt="teamLogo" src={game.aLogo} /></td>
+              <td><img className="team-logo" alt="teamLogo" src={game.hLogo} /></td>
               <td>
                 <button className="btn btn-primary" onClick={() => this.selectedEvent(game)}>
                   Create Event
