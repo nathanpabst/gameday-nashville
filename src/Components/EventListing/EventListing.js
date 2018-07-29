@@ -32,13 +32,14 @@ class EventListing extends React.Component {
       const game = this.state.games.find(x => x.id === event.gameId);
       if (game) {
         return (
-          <div key={event.id} className="card col-sm-4">
+          <div key={event.id} className="card">
             <div className="card-body">
-              <h3 className="card-title"><img className="team-logo" alt="teamLogo" src={game.aLogo}/> vs. <img className="team-logo" alt="teamLogo" src={game.hLogo}/></h3>
+              <h3 className="card-title"><img className="team-logo-home" alt="teamLogo" src={game.aLogo}/> vs. <img className="team-logo-home" alt="teamLogo" src={game.hLogo}/></h3>
               <h4 className="card-text">{event.dateTime}</h4>
               <p className="card-text">{event.location}</p>
               <p className="card-text">{event.address}</p>
               <p className="card-text">{event.city}, {event.state}</p>
+              <p className="card-text">{event.details}</p>
             </div>
           </div>
         );
@@ -47,7 +48,7 @@ class EventListing extends React.Component {
     });
     return (
       <div className="Home">
-        <ul>{eventComponents}</ul>
+        <div className="eventCards">{eventComponents}</div>
       </div>
     );
   }

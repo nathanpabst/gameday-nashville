@@ -53,6 +53,14 @@ class MyEvents extends React.Component {
           .catch((error) => {
             console.error('error with retrieving events', error);
           });
+        fbEvents
+          .getAllEvents()
+          .then(() => {
+
+          })
+          .catch((error) => {
+            console.error('error with retrieving events', error);
+          });
       })
       .catch((err) => {
         console.error('error with updating details', err);
