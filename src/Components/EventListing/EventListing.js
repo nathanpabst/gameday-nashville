@@ -23,7 +23,8 @@ class EventListing extends React.Component {
     const eventComponents = events.map((event) => {
       return (
         <div key={event.id} className="card">
-          <div className="card-body">
+          <div className="card-body col-sm-4">
+            <h2>Team<img className="selectedTeamLogo" src={event.selectedTeamLogo} alt="rooting for logo here"/>Event</h2>
             <h3 className="card-title"><img className="team-logo-home" alt="teamLogo" src={event.aLogo}/> vs. <img className="team-logo-home" alt="teamLogo" src={event.hLogo}/></h3>
             <h4 className="card-text">{event.dateTime}</h4>
             <p className="card-text">{event.location}</p>
