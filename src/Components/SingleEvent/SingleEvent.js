@@ -42,7 +42,6 @@ class SingleEvent extends React.Component {
     return (
       <div className="col-sm-4 col-med-2" key={event.id}>
         <div className="thumbnail eventThumbnail">
-          <h2>Go <img className="selectedTeamLogo" src={event.selectedTeamLogo} alt="rooting for logo here"/></h2>
           <div className="caption">
             <h3><img className="team-logo-events" alt="teamLogo" src={event.aLogo}/> vs. <img className="team-logo-events" alt="teamLogo" src={event.hLogo}/></h3>
             <h3>{event.dateTime}</h3>

@@ -84,12 +84,12 @@ class EventForm extends React.Component {
     const {newEvent} = this.state;
     const {aLogo, hLogo} = this.props.gameDeets;
     return (
-      <div className={this.state.showEventForm || this.props.showEventForm ? 'col-xs-8 col-xs-offset-2' : 'hide'}>
+      <div className={this.state.showEventForm || this.props.showEventForm ? 'col-xs-8 col-xs-offset-2 event-form' : 'hide'}>
         <h2 className="">Add an event:</h2>
         <form className="form-horizontal" onSubmit={this.formSubmit}>
-
           <div className="form-group">
             <label htmlFor="selectedTeam">Who are you rooting for?</label>
+            <br />
             <img className="team-logo-form" src={aLogo} onClick={this.selectedTeamChange} alt="team-logo"/>
             <img className="team-logo-form" src={hLogo} onClick={this.selectedTeamChange} alt="team-logo"/>
           </div>
