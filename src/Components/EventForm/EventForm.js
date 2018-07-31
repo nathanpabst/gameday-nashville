@@ -22,6 +22,7 @@ class EventForm extends React.Component {
     newEvent: defaultEvent,
     showEventForm: this.props.showEventForm,
     gameDeets: this.props.gameDeets,
+    selectedTeam: '',
   }
 
   formFieldStringState = (name, e) => {
@@ -59,10 +60,16 @@ class EventForm extends React.Component {
     this.formFieldStringState('details', e);
   }
 
+  selectedTeamChange = (e) => {
+    this.setState({selectedTeam: e.target.src });
+  }
+
   formSubmit = (e) => {
     const {onSubmit} = this.props;
-    const {newEvent} = this.state;
+    const {newEvent, selectedTeam} = this.state;
+    newEvent.selectedTeamLogo = selectedTeam;
     e.preventDefault();
+    newEvent.selectedTeamLogo &&
     newEvent.location &&
     newEvent.address &&
     newEvent.city &&
@@ -75,10 +82,18 @@ class EventForm extends React.Component {
 
   render () {
     const {newEvent} = this.state;
+    const {aLogo, hLogo} = this.props.gameDeets;
     return (
-      <div className={this.state.showEventForm || this.props.showEventForm ? 'col-xs-8 col-xs-offset-2' : 'hide'}>
+      <div className={this.state.showEventForm || this.props.showEventForm ? 'col-xs-8 col-xs-offset-2 event-form' : 'hide'}>
         <h2 className="">Add an event:</h2>
         <form className="form-horizontal" onSubmit={this.formSubmit}>
+          <div className="form-group">
+            <label htmlFor="selectedTeam">Who are you rooting for?</label>
+            <br />
+            <img className="team-logo-form" src={aLogo} onClick={this.selectedTeamChange} alt="team-logo"/>
+            <img className="team-logo-form" src={hLogo} onClick={this.selectedTeamChange} alt="team-logo"/>
+          </div>
+
           <div className="form-group">
             <label htmlFor="location">Location</label>
             <input
