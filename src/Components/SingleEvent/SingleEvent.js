@@ -42,11 +42,11 @@ class SingleEvent extends React.Component {
     return (
       <div className="col-sm-4 col-med-2" key={event.id}>
         <div className="thumbnail eventThumbnail">
-          <img src="https://media.bizj.us/view/img/3507951/kansas-city-chiefs-mark*750xx681-384-192-110.jpg" alt="team-logo" />
+          <img src="" alt="rooting for logo here"/>
           <div className="caption">
+            <h3><img className="team-logo-events" alt="teamLogo" src={event.aLogo}/> vs. <img className="team-logo-events" alt="teamLogo" src={event.hLogo}/></h3>
             <h3>{event.dateTime}</h3>
-            <h4>{event.homeTeam} vs. {event.awayTeam}</h4>
-            <p>{event.location}</p>
+            <h4>{event.location}</h4>
             <p>{event.address}</p>
             <p>{event.city}, {event.state}</p>
             <p>{event.details}</p>
