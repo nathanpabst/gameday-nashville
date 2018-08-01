@@ -29,6 +29,7 @@ class CreateEvent extends React.Component {
           fbEvents.getAllEvents()
             .then((events) => {
               this.setState({events});
+              this.props.history.push('/myEvents');
             });
         })
         .catch((error) => {
