@@ -16,10 +16,12 @@ class CreateEvent extends React.Component {
       searchTerm: '',
     };
 
+    // ********SHOW/HIDE THE EVENT FORM WHEN CREATE EVENT BTN IS CLICKED
     toggleShowEventForm = () => {
       this.setState({showEventForm: !this.state.showEventForm});
     }
 
+    // *********TAKES FORM INPUT AND POSTS NEW EVENT TO FIREBASE
     formSubmitEvent = (newEvent) => {
       const {gameDeets} = this.state;
       fbEvents.postEvent(newEvent, gameDeets)
@@ -34,11 +36,14 @@ class CreateEvent extends React.Component {
         });
     }
 
+    // ******GRABS SEARCH INPUT FROM GAMES & SETS STATE*****//
     updateSearchInput = (searchTerm) => {
       this.setState({searchTerm});
     }
 
+    // ******GRABS GAMEDEETS FROM EVENT FORM & SETS STATE*****//
     updateGameDeets = gameDeets => this.setState({gameDeets})
+
     render () {
       return (
         <div className="CreateEvent">

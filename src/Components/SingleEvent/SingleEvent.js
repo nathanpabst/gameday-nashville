@@ -10,6 +10,7 @@ class SingleEvent extends React.Component {
     },
   };
 
+  // *******CAPTURES NEW USER INPUT WITHIN THE EDIT FORM*****//
   handleInputChange = (e) => {
     const details = e.target.value;
     this.setState({event: {
@@ -18,6 +19,7 @@ class SingleEvent extends React.Component {
     }});
   }
 
+  // *********SHOW THE EDIT FORM ON BUTTON CLICK*******//
   toggleShowEditForm = () => {
     this.setState({
       showEditForm: !this.state.showEditForm,

@@ -7,8 +7,9 @@ import fbEvents from '../../firebaseRequests/events';
 class EventListing extends React.Component {
   state = {
     events: [],
-    games: [],
   }
+
+  // ********GET REQUEST TO FIREBASE FOR ALL AVAILABLE EVENTS****//
   componentDidMount () {
     fbEvents.getAllEvents()
       .then((events) => {
@@ -39,7 +40,7 @@ class EventListing extends React.Component {
       <div className="Home">
         <div className="jumbotron">
           <h1>Welcome to Gameday Nashville!</h1>
-          <p>Live like a local, wherever you are.</p>
+          <p>Cheer like a local, wherever you are.</p>
           <p><a className="btn btn-primary btn-lg" href="/register" role="button">Sign Up</a></p>
         </div>
         <h2 className="header">Nearby watch parties</h2>

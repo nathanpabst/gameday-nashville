@@ -25,15 +25,10 @@ class EventForm extends React.Component {
     selectedTeam: '',
   }
 
+  // ********UPDATES THE STATE FOR FIELDS CONTAINING STRINGS*****//
   formFieldStringState = (name, e) => {
     const tempEvent = {...this.state.newEvent};
     tempEvent[name] = e.target.value;
-    this.setState({newEvent: tempEvent});
-  }
-
-  formFieldNumberState = (name, e) => {
-    const tempEvent = {...this.state.newEvent};
-    tempEvent[name] = e.target.value * 1;
     this.setState({newEvent: tempEvent});
   }
 
@@ -50,11 +45,7 @@ class EventForm extends React.Component {
 
   stateChange = e => {
     this.formFieldStringState('state', e);
-  };
-
-  zipChange = e => {
-    this.formFieldNumberState('zip', e);
-  };
+  }
 
   detailChange = (e) => {
     this.formFieldStringState('details', e);
@@ -64,6 +55,18 @@ class EventForm extends React.Component {
     this.setState({selectedTeam: e.target.src });
   }
 
+  // ********UPDATES THE STATE FOR FIELDS CONTAINING NUMBERS*****//
+  formFieldNumberState = (name, e) => {
+    const tempEvent = {...this.state.newEvent};
+    tempEvent[name] = e.target.value * 1;
+    this.setState({newEvent: tempEvent});
+  }
+
+  zipChange = e => {
+    this.formFieldNumberState('zip', e);
+  };
+
+  // *******ENSURES ALL FIELDS ARE POPULATED BEFORE SAVING THE ENTRY****//
   formSubmit = (e) => {
     const {onSubmit} = this.props;
     const {newEvent, selectedTeam} = this.state;
