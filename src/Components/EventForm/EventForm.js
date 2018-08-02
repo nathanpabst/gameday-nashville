@@ -80,7 +80,7 @@ class EventForm extends React.Component {
     newEvent.zip &&
     newEvent.details
       ? onSubmit(newEvent) && this.setState({newEvent: defaultEvent})
-      : alert('dear god why???');
+      : alert('dear god why!???');
   }
 
   render () {
