@@ -12,60 +12,32 @@ class MyEvents extends React.Component {
     events: [],
   }
 
+  refreshEvents = () => fbEvents
+    .getMyEvents(authRequests.getUid())
+    .then((events) => {
+      this.setState({ events });
+    })
+    .catch((error) => {
+      console.error('error with retrieving events', error);
+    });
+
   componentDidMount () {
-    fbEvents
-      .getMyEvents(authRequests.getUid())
-      .then((events) => {
-        this.setState({ events });
-      })
-      .catch((error) => {
-        console.error('error with retrieving events', error);
-      });
+    this.refreshEvents();
   }
 
-  deleteClickEvent = (id) => {
-    fbEvents
-      .deleteMyEvent(id)
-      .then(() => {
-        fbEvents
-          .getMyEvents(authRequests.getUid())
-          .then((events) => {
-            this.setState({ events });
-          })
-          .catch((error) => {
-            console.error('error with retrieving events', error);
-          });
-      })
-      .catch(((err) => {
-        console.error('error with deleting event', err);
-      }));
-  }
+  deleteClickEvent = (id) => fbEvents
+    .deleteMyEvent(id)
+    .then(this.refreshEvents)
+    .catch(((err) => {
+      console.error('error with deleting event', err);
+    }));
 
-  saveClickEvent = (id, event) => {
-    return fbEvents
-      .putEvent(id, event)
-      .then(() => {
-        fbEvents
-          .getMyEvents(authRequests.getUid())
-          .then((events) => {
-            this.setState({ events });
-          })
-          .catch((error) => {
-            console.error('error with retrieving events', error);
-          });
-        fbEvents
-          .getAllEvents()
-          .then(() => {
-
-          })
-          .catch((error) => {
-            console.error('error with retrieving events', error);
-          });
-      })
-      .catch((err) => {
-        console.error('error with updating details', err);
-      });
-  };
+  saveClickEvent = (id, event) => fbEvents
+    .putEvent(id, event)
+    .then(this.refreshEvents)
+    .catch((err) => {
+      console.error('error with updating details', err);
+    });
 
   render () {
     const { events } = this.state;

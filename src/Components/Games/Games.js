@@ -11,6 +11,7 @@ class Games extends React.Component {
     originalGames: [],
   };
 
+  // *********IDENTIFIES WHICH GAME IS SELECTED*******//
   selectedEvent = (game) => {
     const { toggleShowEventForm, updateGameDeets } = this.props;
     this.setState({ event: { ...game } });
@@ -18,6 +19,7 @@ class Games extends React.Component {
     toggleShowEventForm();
   }
 
+  // *****SEARCHES DATABASE FOR USER INPUT AND COLLECTS MATCHES*****//
   componentDidMount () {
     const keepers = [];
     fbGames
@@ -41,6 +43,7 @@ class Games extends React.Component {
       });
   }
 
+  // *******STANDARDIZES CASE OF USER SEARCH AND DATABASE INPUT******//
   componentWillReceiveProps () {
     const searchInput = this.props.searchTerm;
     const games = [...this.state.originalGames];

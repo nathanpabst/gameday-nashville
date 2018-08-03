@@ -4,23 +4,18 @@ import constants from '../constants';
 import authRequests from '../firebaseRequests/auth';
 
 const getAllEvents = () => {
-  return new Promise((resolve, reject) => {
-    axios
-      .get(`${constants.firebaseConfig.databaseURL}/Events.json`)
-      .then((results) => {
-        const events = [];
-        if (results.data !== null) {
-          Object.keys(results.data).forEach((key) => {
-            results.data[key].id = key;
-            events.push(results.data[key]);
-          });
-        }
-        resolve(events);
-      })
-      .catch((error) => {
-        reject(error);
-      });
-  });
+  return axios
+    .get(`${constants.firebaseConfig.databaseURL}/Events.json`)
+    .then((results) => {
+      const events = [];
+      if (results.data !== null) {
+        Object.keys(results.data).forEach((key) => {
+          results.data[key].id = key;
+          events.push(results.data[key]);
+        });
+      }
+      return events;
+    });
 };
 
 const postEvent = (newEvent, gameDeets) => {

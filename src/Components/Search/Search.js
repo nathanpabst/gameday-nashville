@@ -4,7 +4,7 @@ import './Search.css';
 
 class Search extends React.Component {
   state = {
-    userInput: '',
+    searchTerm: '',
   }
 
   handleInputChange = () => {
