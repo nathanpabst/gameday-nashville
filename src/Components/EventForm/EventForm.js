@@ -93,10 +93,6 @@ class EventForm extends React.Component {
     const {aLogo, hLogo} = this.props.gameDeets;
     return (
       <div className={this.state.showEventForm || this.props.showEventForm ? 'col-xs-8 col-xs-offset-2 event-form' : 'hide'}>
-        <FormAlert
-          show = {show}
-          message = {message}
-        />
         <h2 className="">Add an event:</h2>
         <form className="form-horizontal" onSubmit={this.formSubmit}>
           <div className="form-group">
@@ -177,6 +173,10 @@ class EventForm extends React.Component {
           <button className="btn btn-primary">
             Save Event
           </button>
+          <FormAlert
+            show = {show}
+            message = {message}
+          />
         </form>
       </div>
     );
