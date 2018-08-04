@@ -20,7 +20,7 @@ class Search extends React.Component {
           <div className="input-group searchBar">
             <input
               type="text" className="form-control"
-              placeholder="Search for team"
+              placeholder="Search by city or team name..."
               ref={input => this.search = input}
               onChange={this.handleInputChange}
             />

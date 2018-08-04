@@ -1,5 +1,4 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
 
 import fbEvents from '../../firebaseRequests/events';
 import authRequests from '../../firebaseRequests/auth';
@@ -52,10 +51,10 @@ class MyEvents extends React.Component {
 
     return (
       <div className="MyEvents">
-        <header className="top">
-          <h1>
-            My Hosted Events
-          </h1>
+        <header className="header">
+          <h2>
+            My events
+          </h2>
           <div className="row">
             {eventComponents}
           </div >

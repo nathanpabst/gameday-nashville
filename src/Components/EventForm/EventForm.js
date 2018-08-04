@@ -1,4 +1,5 @@
 import React from 'react';
+import FormAlert from '../FormAlert/FormAlert';
 
 import PropTypes from 'prop-types';
 
@@ -23,6 +24,8 @@ class EventForm extends React.Component {
     showEventForm: this.props.showEventForm,
     gameDeets: this.props.gameDeets,
     selectedTeam: '',
+    show: false,
+    message: 'please make sure all fields are complete',
   }
 
   // ********UPDATES THE STATE FOR FIELDS CONTAINING STRINGS*****//
@@ -80,10 +83,12 @@ class EventForm extends React.Component {
     newEvent.zip &&
     newEvent.details
       ? onSubmit(newEvent) && this.setState({newEvent: defaultEvent})
-      : alert('dear god why!???');
+      : this.setState({show: true});
   }
 
   render () {
+    const show = this.state.show;
+    const message = this.state.message;
     const {newEvent} = this.state;
     const {aLogo, hLogo} = this.props.gameDeets;
     return (
@@ -168,6 +173,10 @@ class EventForm extends React.Component {
           <button className="btn btn-primary">
             Save Event
           </button>
+          <FormAlert
+            show = {show}
+            message = {message}
+          />
         </form>
       </div>
     );

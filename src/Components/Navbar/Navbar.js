@@ -14,7 +14,7 @@ class Navbar extends React.Component {
     };
 
     return (
-      <div className="Navbar">
+      <div className="Navbar ">
         <nav className="navbar navbar-inverse">
           <div className="container-fluid">
             <div className="navbar-header">
