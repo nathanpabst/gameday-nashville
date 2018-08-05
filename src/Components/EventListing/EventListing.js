@@ -26,13 +26,14 @@ class EventListing extends React.Component {
       return (
         <Carousel.Item key={event.id} className="card">
           <h2 className="card-background">Team<img className="selectedTeamLogo" src={event.selectedTeamLogo} alt="rooting for logo here"/>Event</h2>
-          <Carousel.Caption>
-            <h3 className="card-title"><img className="team-logo-home" alt="teamLogo" src={event.aLogo}/> vs. <img className="team-logo-home" alt="teamLogo" src={event.hLogo}/></h3>
+          <Carousel.Caption className="card-body">
+            <h3 className="card-title">{event.homeTeam} vs. {event.awayTeam}</h3>
             <h4 className="card-text">{event.dateTime}</h4>
-            <p className="card-text">{event.location}</p>
-            <p className="card-text">{event.address}</p>
+            <h5 className="card-text">{event.location}</h5>
+            <p className="card-text">{event.address} {event.city}, {event.state}</p>
             <p className="card-text">{event.city}, {event.state}</p>
-            <p className="card-text">{event.details}</p>              </Carousel.Caption>
+            <p className="card-text">{event.details}</p>
+          </Carousel.Caption>
         </Carousel.Item>
       );
     });
