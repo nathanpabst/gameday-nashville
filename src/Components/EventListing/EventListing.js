@@ -44,7 +44,6 @@ class EventListing extends React.Component {
           <p>Cheer like a local, wherever you are.</p>
           <p><a className="btn btn-primary btn-lg" href="/register" role="button">Sign Up</a></p>
         </div>
-        <hr />
         <h2 className="header">Nearby watch parties</h2>
         <Carousel className="eventCards">{eventComponents}</Carousel>
         <div className="howItWorks">
