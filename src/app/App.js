@@ -13,6 +13,7 @@ import fbConnection from '../firebaseRequests/connection';
 import EventListing from '../Components/EventListing/EventListing';
 import EventForm from '../Components/EventForm/EventForm';
 import Games from '../Components/Games/Games';
+import Footer from '../Components/Footer/Footer';
 fbConnection();
 
 const PrivateRoute = ({ component: Component, authed, ...rest}) => {
@@ -81,7 +82,7 @@ class App extends React.Component {
               authed={this.state.authed}
               runAway={this.runAway}
             />
-            <div className="container">
+            <div className="container nav-margin">
               <div className="row">
                 <Switch>
                   <Route path="/" exact component={EventListing}/>
@@ -123,6 +124,7 @@ class App extends React.Component {
                 </Switch>
               </div>
             </div>
+            <Footer />
           </div>
         </BrowserRouter>
       </div>
