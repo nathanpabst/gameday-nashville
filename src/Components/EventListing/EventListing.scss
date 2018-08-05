@@ -1,6 +1,6 @@
 .header {
   color: #2e3e48;
-  text-align: left;
+  text-align: center;
 }
 
 .selectedTeamLogo {
@@ -16,4 +16,16 @@
   color: white;
 }
 
-
+.howItWorks {
+  color: #2e3e48;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hiw-header {
+  color: #2e3e48;
+}
+.col-sm-6 {
+  padding-bottom: 15px;
+}
