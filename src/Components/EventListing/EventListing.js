@@ -46,6 +46,23 @@ class EventListing extends React.Component {
         </div>
         <h2 className="header">Nearby watch parties</h2>
         <Carousel className="eventCards">{eventComponents}</Carousel>
+        <div className="howItWorks">
+          <section>
+            <div className="howItWorksContainer">
+              <h2 className="hiw-header">How Gameday Works</h2>
+              <div className="howItWorksItem col-sm-6">
+                <h3><span className="glyphicon glyphicon-search" aria-hidden="true"></span> Find an event</h3>
+                <p>Join peeps who love the same team as you.</p>
+                <a href="/register">Sign up</a>
+              </div>
+              <div className="howItWorksItem col-sm-6">
+                <h3><span className="glyphicon glyphicon-plus" aria-hidden="true"></span> Create an event</h3>
+                <p>Create your own event, and draw from the community.</p>
+                <a href="/register">Create an event</a>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
     );
   }
