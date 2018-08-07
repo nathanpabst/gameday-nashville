@@ -5,20 +5,21 @@
 ```
 Create a Browser Rich Application that demonstrates proficiency in the following:
 1. React
-1. Firebase
-1. Bootstrap
-1. Read, Write, Edit, and Delete with Firebase
+2. Firebase
+3. Bootstrap
+4. Read, Write, Edit, and Delete with Firebase
+5. Technologies covered over the past 6 months
 ```
 ---
 ### Technologies Used
 ```
-1. ECMAScript 6 / JSX
-2. React 16 / Webpack
-3. HTML5
-4. SASS, CSS3, React-Bootstrap
-5. [Firebase (authentication, database, hosting)](https://firebase.google.com/)
-6. [Create React App](https://github.com/facebookincubator/create-react-app)
-7. [react-router-dom](https://reacttraining.com/react-router/core/guides/philosophy)
+> 1. ECMAScript 6 / JSX
+> 2. React 16 / Webpack
+> 3. HTML5
+> 4. SASS, CSS3, React-Bootstrap
+> 5. [Firebase (authentication, database, hosting)](https://firebase.google.com/)
+> 6. [Create React App](https://github.com/facebookincubator/create-react-app)
+> 7. [react-router-dom](https://reacttraining.com/react-router/core/guides/philosophy)
 ```
 ---
 ### About This Project
