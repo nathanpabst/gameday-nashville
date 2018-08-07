@@ -29,18 +29,19 @@ The need for this app became clear to me when I moved to Nashville and no longer
 
 ---
 ### Screenshots
-#### Description: Registration
-<img src="https://raw.githubusercontent.com/nathanpabst/gameday-nashville/a03c1895613e8537374fcad97cd75536e252305c/screenshots/Screen%20Shot%202018-08-07%20at%206.18.36%20PM.png">
-#### Description: Login
+###### Description: Registration page
+<img src="https://raw.githubusercontent.com/nathanpabst/gameday-nashville/061913419cbe27b6e0e860b3fc4e17ef76d86c37/screenshots/Screen%20Shot%202018-08-07%20at%206.19.36%20PM.png">
+###### Description: Login page
 <img src="https://raw.githubusercontent.com/nathanpabst/gameday-nashville/a03c1895613e8537374fcad97cd75536e252305c/screenshots/Screen%20Shot%202018-08-07%20at%206.19.36%20PM.png">
-#### Description: Home page
+##### Description: Home page
 <img src="https://raw.githubusercontent.com/nathanpabst/gameday-nashville/a03c1895613e8537374fcad97cd75536e252305c/screenshots/Screen%20Shot%202018-08-07%20at%206.18.36%20PM.png">
-#### Description: Account landing page
+##### Description: My Events page
 <img src="https://raw.githubusercontent.com/nathanpabst/gameday-nashville/a03c1895613e8537374fcad97cd75536e252305c/screenshots/Screen%20Shot%202018-08-07%20at%206.20.51%20PM.png">
-#### Description: Create Event page
-<img src="https://raw.githubusercontent.com/nathanpabst/gameday-nashville/a03c1895613e8537374fcad97cd75536e252305c/screenshots/Screen%20Shot%202018-08-07%20at%206.23.11%20PM.png">
-#### Description: Search feature in the Create Event page
+##### Description: Search feature in the Create Event page
 <img src="https://raw.githubusercontent.com/nathanpabst/gameday-nashville/a03c1895613e8537374fcad97cd75536e252305c/screenshots/Screen%20Shot%202018-08-07%20at%206.22.39%20PM.png">
+##### Description: Create Event page
+<img src="https://raw.githubusercontent.com/nathanpabst/gameday-nashville/a03c1895613e8537374fcad97cd75536e252305c/screenshots/Screen%20Shot%202018-08-07%20at%206.23.11%20PM.png">
+
 ---
 ### Gameday Nashville 2.0 Features:
 - Option to join or rsvp to an event
