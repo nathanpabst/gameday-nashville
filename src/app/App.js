@@ -14,6 +14,7 @@ import EventListing from '../Components/EventListing/EventListing';
 import EventForm from '../Components/EventForm/EventForm';
 import Games from '../Components/Games/Games';
 import Footer from '../Components/Footer/Footer';
+import ReportBug from '../Components/ReportBug/ReportBug';
 fbConnection();
 
 const PrivateRoute = ({ component: Component, authed, ...rest}) => {
@@ -100,6 +101,11 @@ class App extends React.Component {
                     path="/Login"
                     authed={this.state.authed}
                     component={Login}
+                  />
+                  <PublicRoute
+                    path="/reportBug"
+                    authed={this.state.authed}
+                    component={ReportBug}
                   />
                   <PrivateRoute
                     path="/createEvent"

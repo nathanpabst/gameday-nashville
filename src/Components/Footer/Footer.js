@@ -1,27 +1,26 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 
 import './Footer.css';
 
 class Footer extends React.Component {
+
   render () {
     return (
       <div className="footer">
         <div className="footerTopMenu">
           <div className="footerTopMenuItem">
-            <a href="#">Terms of Use</a>
+            <a href="/reportBug">Terms of Use</a>
           </div>
           <div className="footerTopMenuItem">
-            <a href="#">Privacy Policy</a>
+            <a href="/reportBug">Privacy Policy</a>
           </div>
           <div className="footerTopMenuItem">
-            <a href="#">Report a Bug</a>
+            <a href="/reportBug" className="footer-bug">Report a Bug</a>          </div>
+          <div className="footerTopMenuItem">
+            <a href="/reportBug">Contact Us</a>
           </div>
           <div className="footerTopMenuItem">
-            <a href="#">Contact Us</a>
-          </div>
-          <div className="footerTopMenuItem">
-            <a href="#">Press</a>
+            <a href="/reportBug">Press</a>
           </div>
         </div>
         <div className="footerBottomMenu">

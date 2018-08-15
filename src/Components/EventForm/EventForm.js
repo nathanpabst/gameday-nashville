@@ -93,7 +93,7 @@ class EventForm extends React.Component {
     const {aLogo, hLogo} = this.props.gameDeets;
     return (
       <div className={this.state.showEventForm || this.props.showEventForm ? 'col-xs-8 col-xs-offset-2 event-form' : 'hide'}>
-        <h2 className="">Add an event:</h2>
+        <h2 className="event-header">Add an event</h2>
         <form className="form-horizontal" onSubmit={this.formSubmit}>
           <div className="form-group">
             <label htmlFor="selectedTeam">Who are you rooting for?</label>
@@ -102,7 +102,7 @@ class EventForm extends React.Component {
             <img className="team-logo-form" src={hLogo} onClick={this.selectedTeamChange} alt="team-logo"/>
           </div>
 
-          <div className="form-group">
+          <div className="form-group category">
             <label htmlFor="location">Location</label>
             <input
               type="text"
@@ -113,7 +113,7 @@ class EventForm extends React.Component {
               onChange={this.locationChange}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group category">
             <label htmlFor="address">Address</label>
             <input
               type="text"
@@ -124,7 +124,7 @@ class EventForm extends React.Component {
               onChange={this.addressChange}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group category">
             <label htmlFor="city">City</label>
             <input
               type="text"
@@ -135,7 +135,7 @@ class EventForm extends React.Component {
               onChange={this.cityChange}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group category">
             <label htmlFor="state">State</label>
             <input
               type="text"
@@ -146,7 +146,7 @@ class EventForm extends React.Component {
               onChange={this.stateChange}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group category">
             <label htmlFor="zip">Zip Code</label>
             <input
               type="text"
@@ -158,7 +158,7 @@ class EventForm extends React.Component {
               onChange={this.zipChange}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group category">
             <label htmlFor="details">Details</label>
             <textarea
               type="text"
